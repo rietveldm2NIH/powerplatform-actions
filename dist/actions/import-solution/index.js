@@ -126,10 +126,10 @@ var require_authenticate = __commonJS({
       delete process.env.PAC_CLI_SPN_SECRET;
       return pac("auth", "clear");
     }
-    exports2.clearAuthentication = clearAuthentication;
-    function addUrl(url) {
-      return ["--url", url];
-    }
+    // exports2.clearAuthentication = clearAuthentication;
+    // function addUrl(url) {
+    //   return ["--url", url];
+    // }
     function addCredentials(credentials) {
       return isUsernamePassword(credentials) ? addUsernamePassword(credentials) : addClientCredentials(credentials);
     }
@@ -663,7 +663,7 @@ var require_deleteEnvironment = __commonJS({
           const pacArgs = ["admin", "delete"];
           const validator = new InputValidator_1.InputValidator(host);
           validator.pushInput(pacArgs, "--environment", parameters.environment);
-          validator.pushInput(pacArgs, "--url", parameters.environmentUrl);
+          // validator.pushInput(pacArgs, "--url", parameters.environmentUrl);
           validator.pushInput(pacArgs, "--environment-id", parameters.environmentId);
           validator.pushCommon(pacArgs, parameters);
           logger.log("Calling pac cli inputs: " + pacArgs.join(" "));
@@ -728,7 +728,7 @@ var require_backupEnvironment = __commonJS({
           const pacArgs = ["admin", "backup"];
           const validator = new InputValidator_1.InputValidator(host);
           validator.pushInput(pacArgs, "--environment", parameters.environment);
-          validator.pushInput(pacArgs, "--url", parameters.environmentUrl);
+          // validator.pushInput(pacArgs, "--url", parameters.environmentUrl);
           validator.pushInput(pacArgs, "--environment-id", parameters.environmentId);
           validator.pushInput(pacArgs, "--label", parameters.backupLabel);
           validator.pushCommon(pacArgs, parameters);
@@ -10529,7 +10529,7 @@ var require_resetEnvironment = __commonJS({
           const pacArgs = ["admin", "reset"];
           const validator = new InputValidator_1.InputValidator(host);
           validator.pushInput(pacArgs, "--environment", parameters.environment);
-          validator.pushInput(pacArgs, "--url", parameters.environmentUrl);
+          // validator.pushInput(pacArgs, "--url", parameters.environmentUrl);
           validator.pushInput(pacArgs, "--environment-id", parameters.environmentId);
           validator.pushInput(pacArgs, "--language", parameters.language, InputValidator_1.normalizeLanguage);
           validator.pushInput(pacArgs, "--currency", parameters.currency);
