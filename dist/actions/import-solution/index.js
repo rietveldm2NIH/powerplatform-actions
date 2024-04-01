@@ -126,10 +126,10 @@ var require_authenticate = __commonJS({
       delete process.env.PAC_CLI_SPN_SECRET;
       return pac("auth", "clear");
     }
-    // exports2.clearAuthentication = clearAuthentication;
-    // function addUrl(url) {
-    //   return ["--url", url];
-    // }
+    exports2.clearAuthentication = clearAuthentication;
+    function addUrl(url) {
+      return ["--environment", url];
+    }
     function addCredentials(credentials) {
       return isUsernamePassword(credentials) ? addUsernamePassword(credentials) : addClientCredentials(credentials);
     }
