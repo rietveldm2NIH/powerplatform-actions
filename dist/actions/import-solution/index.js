@@ -117,7 +117,7 @@ var require_authenticate = __commonJS({
       return pac("auth", "create", "--kind", "ADMIN", ...addCredentials(credentials), ...addCloudInstance(credentials));
     }
     exports2.authenticateAdmin = authenticateAdmin;
-    function authenticateEnvironment(pac, credentials, environmentId, logger) {
+    function authenticateEnvironment(pac, credentials, environmentId, environmentUrl, logger) {
       logger.log(`authN to env. authType:${isUsernamePassword(credentials) ? "UserPass" : "SPN"} authScheme:${isUsernamePassword(credentials) ? "" : `${credentials.scheme}`}; cloudInstance: ${credentials.cloudInstance || "<not set>"}; envUrl: ${environmentUrl}`);
       return pac("auth", "create", ...addId(environmentId), ...addCredentials(credentials), ...addCloudInstance(credentials));
     }
