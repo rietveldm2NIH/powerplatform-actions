@@ -117,9 +117,9 @@ var require_authenticate = __commonJS({
       return pac("auth", "create", "--kind", "ADMIN", ...addCredentials(credentials), ...addCloudInstance(credentials));
     }
     exports2.authenticateAdmin = authenticateAdmin;
-    function authenticateEnvironment(pac, credentials, environmentUrl, logger) {
+    function authenticateEnvironment(pac, credentials, environmentId, logger) {
       logger.log(`authN to env. authType:${isUsernamePassword(credentials) ? "UserPass" : "SPN"} authScheme:${isUsernamePassword(credentials) ? "" : `${credentials.scheme}`}; cloudInstance: ${credentials.cloudInstance || "<not set>"}; envUrl: ${environmentUrl}`);
-      return pac("auth", "create", ...addUrl(environmentUrl), ...addCredentials(credentials), ...addCloudInstance(credentials));
+      return pac("auth", "create", ...addId(environmentId), ...addCredentials(credentials), ...addCloudInstance(credentials));
     }
     exports2.authenticateEnvironment = authenticateEnvironment;
     function clearAuthentication(pac) {
@@ -127,8 +127,8 @@ var require_authenticate = __commonJS({
       return pac("auth", "clear");
     }
     exports2.clearAuthentication = clearAuthentication;
-    function addUrl(url) {
-      return ["--environment", url];
+    function addId(id) {
+      return ["--environment", id];
     }
     function addCredentials(credentials) {
       return isUsernamePassword(credentials) ? addUsernamePassword(credentials) : addClientCredentials(credentials);
