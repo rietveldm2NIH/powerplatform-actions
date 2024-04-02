@@ -11,7 +11,7 @@ inputs:
     description: 'Specifies the target Dataverse. The value may be a Guid or absolute https URL. When not specified, the active organization selected for the current auth profile will be used.'
     required: true
 
- environment-id:
+  environment-id:
     description: 'Specifies the target Dataverse. The value may be a Guid or absolute https URL. When not specified, the active organization selected for the current auth profile will be used.'
     required: true
 
