@@ -334,7 +334,8 @@ var require_exportSolution = __commonJS({
         const logger = runnerParameters.logger;
         const pac = (0, createPacRunner_1.default)(runnerParameters);
         try {
-          const authenticateResult = yield (0, authenticate_1.authenticateEnvironment)(pac, parameters.credentials, parameters.environmentUrl, logger);
+          // const authenticateResult = yield (0, authenticate_1.authenticateEnvironment)(pac, parameters.credentials, parameters.environmentUrl, logger);
+          const authenticateResult = yield (0, authenticate_1.authenticateEnvironment)(pac, parameters.credentials, parameters.environment, logger);
           logger.log("The Authentication Result: " + authenticateResult);
           const pacArgs = ["solution", "export"];
           const validator = new InputValidator_1.InputValidator(host);
