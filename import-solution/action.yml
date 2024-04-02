@@ -11,6 +11,10 @@ inputs:
     description: 'Specifies the target Dataverse. The value may be a Guid or absolute https URL. When not specified, the active organization selected for the current auth profile will be used.'
     required: true
 
+ environment-id:
+    description: 'Specifies the target Dataverse. The value may be a Guid or absolute https URL. When not specified, the active organization selected for the current auth profile will be used.'
+    required: true
+
   user-name:
     description: 'Power Platform user name to authenticate with, e.g. myname@my-org.onmicrosoft.com. Setting this input makes user-name and password required; specifying alternate "app-id" credential set of inputs will result in an error.'
     required: false
