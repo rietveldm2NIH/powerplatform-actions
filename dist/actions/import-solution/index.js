@@ -127,8 +127,8 @@ var require_authenticate = __commonJS({
       return pac("auth", "clear");
     }
     exports2.clearAuthentication = clearAuthentication;
-    function addId(id) {
-      return ["--environment", id];
+    function addId(environment) {
+      return ["--environment", environment];
     }
     function addCredentials(credentials) {
       return isUsernamePassword(credentials) ? addUsernamePassword(credentials) : addClientCredentials(credentials);
@@ -11685,7 +11685,7 @@ var require_pipelineDeploy = __commonJS({
           logger.log("The Authentication Result: " + authenticateResult);
           validator.pushInput(pacArgs, "--solutionName", parameters.solutionName);
           validator.pushInput(pacArgs, "--stageId", parameters.stageId);
-          validator.pushInput(pacArgs, "--environment", parameters.deploymentEnvironment);
+          validator.pushInput(pacArgs, "--environment", parameters.environment);
           validator.pushInput(pacArgs, "--currentVersion", parameters.currentVersion);
           validator.pushInput(pacArgs, "--newVersion", parameters.newVersion);
           validator.pushInput(pacArgs, "--wait", parameters.waitForCompletion);
